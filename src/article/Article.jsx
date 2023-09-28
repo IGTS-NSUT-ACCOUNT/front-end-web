@@ -7,6 +7,7 @@ import ArticleContent from "./articleContent/ArticleContent";
 import Discussions from "./comment-section/discussions/Discussions";
 import Moment from "react-moment";
 import MetaDecorators from "../MetaDecorator";
+import Related from "./related/Related";
 
 const Article = () => {
   const [heading, setHeading] = useState("");
@@ -123,22 +124,29 @@ const Article = () => {
         likes={blog ? blog.likes : 0}
         fetchBlog={fetchBlog}
       />
-
-      <div className="mx-20 flex justify-center items-center sm:mx-30 ">
-        <div className="text-stone-300">Related:</div>
-        {subtopics.map((el) => {
-          const subtopicName = el.name.replaceAll(" ", "-");
-          return (
-            <a
-              href={"/blogs/subtopic/" + el.subtopic_id + "/" + subtopicName}
-              className="mx-4 relative z-10 rounded-full bg-stone-600 px-3 py-1.5 text-lg font-medium text-gray-200 hover:bg-gray-100 hover:text-gray-700 lg:text-sm"
-            >
-              {el.name}
-            </a>
-          );
-        })}
+      <div className="w-full flex flex-col justify-center items-center">
+        <div className="text-stone-300 text-2xl">Related</div>
+        <div className="flex justify-center items-center sm:mx-30 w-[60%] gap-x-20 flex-wrap">
+          
+          {/* {subtopics.map((el) => {
+            const subtopicName = el.name.replaceAll(" ", "-");
+            return (
+              <a
+                href={"/blogs/subtopic/" + el.subtopic_id + "/" + subtopicName}
+                className="mx-4 relative z-10 rounded-full bg-stone-600 px-3 py-1.5 text-lg font-medium text-gray-200 hover:bg-gray-100 hover:text-gray-700 lg:text-sm"
+              >
+                {el.name}
+              </a>
+            );
+          })} */}
+          <Related/>
+          <Related/>
+          <Related/>
+          <Related/>
+          
+          
+        </div>
       </div>
-
       {/* comments */}
       <Discussions />
     </div>
