@@ -23,3 +23,7 @@
   width: 100vw !important;
   object-fit: cover !important;
 }
+
+.prose {
+  --tw-prose-headings: #fff;
+}
