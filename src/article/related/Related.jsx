@@ -1,10 +1,11 @@
-import logo from "./smth.jpg"
+import logo1 from "./smth.jpg"
 import {PiHandsClappingLight} from "react-icons/pi";
 import {BiMessageRounded} from "react-icons/bi";
 import {MdOutlineBookmarkAdd} from "react-icons/md"
-const Related = () => {
+const Related = ({name,content,image,date,likes,comments}) => {
+    const logo = image ? image : logo1;
     return (  
-        <div className="flex flex-col w-[40%] my-8 p-0 text-white gap-y-5">
+        <div className="flex flex-col w-full my-8 p-0 mx-5 text-white gap-y-5">
             <div className="w-full h-[200px]">
                 <img src={logo} className="w-full h-full cover" />
             </div>
@@ -15,15 +16,15 @@ const Related = () => {
                 </div>
             </div>
             <div className="block w-full">
-                <h1 className="font-bold text-xl my-2">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+                <h1 className="font-bold text-xl my-2">{name ? name : "Lorem ipsum dolor sit amet consectetur adipisicing."}</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, mollitia!
+                    {content ? content : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, mollitia!"}
                 </p>
             </div>
             <div className="flex gap-x-2">
                 <p className="text-sm ">10 min read</p>
                 <div>|</div>
-                <p className="text-sm ">Date</p>
+                <p className="text-sm ">{date ? date : "Date"} </p>
             </div>
             <div className="flex justify-between">
                 <div className="flex gap-x-5 ">
@@ -32,11 +33,11 @@ const Related = () => {
                             <PiHandsClappingLight style={{width:"20px",height:"20px"}}/>
                         </div>
                         <div className="hover:opacity-60">
-                            3.5K
+                            {likes ? likes : "3.5k"}
                         </div>
                     </div>
                     <div className="flex hover:opacity-60 gap-x-1">
-                        <BiMessageRounded style={{width:"20px",height:"20px",marginTop:"2px"}}/> 30
+                        <BiMessageRounded style={{width:"20px",height:"20px",marginTop:"2px"}}/> {comments ? comments : "30"}
                     </div>
                 </div>
                 <div className="">

@@ -7,7 +7,9 @@ import ArticleContent from "./articleContent/ArticleContent";
 import Discussions from "./comment-section/discussions/Discussions";
 import Moment from "react-moment";
 import MetaDecorators from "../MetaDecorator";
-import Related from "./related/Related";
+import ButtonCarousel from "../Carousels/ButtonCarousel";
+import ElastiCarousel from "../Carousels/ElastiCarousel";
+
 
 const Article = () => {
   const [heading, setHeading] = useState("");
@@ -126,7 +128,7 @@ const Article = () => {
       />
       <div className="w-full flex flex-col justify-center items-center">
         <div className="text-stone-300 text-2xl">Related</div>
-        <div className="flex justify-center items-center sm:mx-30 w-[60%] gap-x-20 flex-wrap">
+        <div className="flex justify-center items-center sm:mx-30 xl:w-[63%] w-[73%]  gap-x-20 flex-wrap">
           
           {/* {subtopics.map((el) => {
             const subtopicName = el.name.replaceAll(" ", "-");
@@ -139,11 +141,8 @@ const Article = () => {
               </a>
             );
           })} */}
-          <Related/>
-          <Related/>
-          <Related/>
-          <Related/>
-          
+          {/* <ButtonCarousel subtopics = {subtopics}/> */}
+          <ElastiCarousel subtopics = {subtopics}/>
           
         </div>
       </div>
